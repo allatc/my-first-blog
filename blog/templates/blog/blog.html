@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+{% extends "personal/header.html" %} 
+ <head>
+	<title>Blog Template for Bootstrap</title>
+	<br>
+  </head>
+
+
+	{% block content %}
+	{% for post in object_list %}
+	{{ post.date|date:"d-m-Y" }}<a href="/blog/{{post.id}}"> {{post.title}}</a>
+	<br>
+	{{post.body|truncatewords:50}}
+	<br><br>
+	{% endfor %}
+    	{% endblock %}
+
+
+
+</html>
